@@ -1,0 +1,70 @@
+﻿<Window x:Class="CurrencyConv.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CurrencyConv"
+        mc:Ignorable="d"
+        Title="Конвертер валют" MinHeight="600" MinWidth="500" Height="600" Width="500" MaxHeight="700" MaxWidth="600" Background="#424242" WindowStyle="ToolWindow" FontSize="16">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"></RowDefinition>
+            <RowDefinition Height="0.6*"></RowDefinition>
+            <RowDefinition Height="0.6*"></RowDefinition>
+            <RowDefinition Height="0.8*"></RowDefinition>
+            <RowDefinition Height="0.8*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.6*"></RowDefinition>
+            <RowDefinition Height="0.7*"></RowDefinition>
+            <RowDefinition Height="0.6*"></RowDefinition>
+            <RowDefinition Height="0.4*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--Верхний блок-->
+        <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="6" Grid.RowSpan="2" Background="#e9edf5" Margin="5" CornerRadius="35">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50"/>
+            </Border.Effect>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35">Конвертер валют</TextBlock>
+        </Border>
+        <!--Центральный блок 2-->
+        <Border Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="6" Grid.RowSpan="3" Background="#e9edf5" Margin="29" CornerRadius="25">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50"/>
+            </Border.Effect>
+        </Border>
+        <!--Центральный блок 1-->
+        <Border Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="6"  Background="#e9edf5" Margin="10" CornerRadius="25" VerticalAlignment="Stretch" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20"/>
+            </Border.Effect>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Конвертировать:</TextBlock>
+        </Border>
+        <!--Нижний блок-->
+        <Border Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="6" Grid.RowSpan="5" Background="#e9edf5" Margin="30,5,30,20" CornerRadius="30"  >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30"/>
+            </Border.Effect>
+        </Border>
+        <!--Панель выбора конвертации-->
+        <StackPanel Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="4" VerticalAlignment="Center" >
+            <RadioButton GroupName="RButton" Content="Йены в доллары" IsChecked="True" Checked="RadioButton_Checked1" ToolTip="Йены могут принимать значение от 0 до 2147483520." FontSize="20"/>
+            <RadioButton GroupName="RButton" Content="Доллары в йены"  Checked="RadioButton_Checked2" ToolTip="Доллары могут принимать значение от 0 до 1491308." FontSize="20"/>
+        </StackPanel>
+        <!--Поле ввода/вывода-->
+        <TextBox x:Name="text1" Grid.Column="2" Grid.Row="7"  Grid.ColumnSpan="3" TextWrapping="Wrap" ToolTip="Сюда вписывать значение." FontSize="12" />
+        <!--Кнопка "Очистить"-->
+        <Button x:Name="button1" Grid.Column="5" Grid.Row="7" Content="Очистить" Background="#FF5F5F5F" Foreground="White" ToolTip="Очистить поле ввода/вывода." FontSize="12" Click="Button_Cleaning"/>
+        <!--Кнопка "Конвертировать"-->
+        <Button x:Name="button2" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="4" Content="Конвертировать" Background="#FFE6E6E6" Margin="0,0,0,13" ToolTip="Конвертировать значение." FontSize="18" Click="Button_Convert"/>
+    </Grid>
+</Window>
